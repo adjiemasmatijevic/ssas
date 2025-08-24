@@ -35,7 +35,7 @@ class M_kategori_transaksi extends CI_Model
 
     public function delete($id)
     {
-        return ($this->db->where('id', $id)->delete('kategori_transaksi')) ? true : false;
+        return ($this->db->where('kd_trx', $id)->delete('kategori_transaksi')) ? true : false;
     }
 
     public function getOne($id)

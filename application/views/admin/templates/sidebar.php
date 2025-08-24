@@ -4,7 +4,7 @@
         <h4 class="text-dark">SSAS</h4>
         <ul class="nav flex-column mt-4">
             <li class="nav-item mb-2">
-                <a class="nav-link" href="#"><i class="bi bi-app me-2"></i> DASHBOARD</a>
+                <a class="nav-link" href="<?= base_url('admin') ?>"><i class="bi bi-app me-2"></i> DASHBOARD</a>
             </li>
             <li class="nav-item mb-2">
                 <a class="nav-link" href="#"><i class="bi bi-app me-2"></i> MASTER DATA</a>
@@ -13,7 +13,7 @@
                 <a class="nav-link" href="#"><i class="bi bi-app me-2"></i> STATUS</a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link" href="#"><i class="bi bi-app me-2"></i> PPKB</a>
+                <a class="nav-link" href="<?= base_url('admin/ppkb') ?>"><i class="bi bi-app me-2"></i> PPKB</a>
             </li>
             <li class="nav-item mb-2">
                 <a class="nav-link" href="#"><i class="bi bi-app me-2"></i> SPK</a>

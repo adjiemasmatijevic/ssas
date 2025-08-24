@@ -253,42 +253,36 @@ class Admin extends CI_Controller
         redirect('admin/ppkb');
     }
 
+    public function delete()
+    {
+        $id = $this->input->get('id', true);
+        // Validasi ID
+        if (!$id) {
+            $this->session->set_flashdata('error', 'ID tidak ditemukan.');
+            redirect('admin/ppkb');
+            return;
+        }
 
-    // public function insert_ppkb()
-    // {
-    //     $ppkb_data = $this->session->userdata('ppkb_temp');
+        $this->load->model('M_kategori_transaksi');
+        $this->load->model('M_header_transaksi');
 
-    //     if (!$ppkb_data) {
-    //         redirect('admin/ppkb'); // Jika tidak ada session, kembali ke form
-    //     }
+        $this->db->trans_begin();
 
-    // // Upload file jika ada
-    // $ship_file = $this->upload_file('ship_file');
-    // $tonnage_certificate = $this->upload_file('tonnage_certificate');
-    // $ppkb_data['ship_file'] = $ship_file;
-    // $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
+        $deleteKategori = $this->M_kategori_transaksi->delete($id);
+        $deleteHeader = $this->M_header_transaksi->delete($id);
 
-    //     // Cek & insert data kapal + agent
-    //     $imo = $ppkb_data['imo_mmsi'];
-    //     $agent_name = $ppkb_data['agent_name'];
+        if ($this->db->trans_status() === FALSE) {
+            $this->db->trans_rollback();
+            $this->session->set_flashdata('error', 'Gagal menghapus data.');
+        } else {
+            $this->db->trans_commit();
+            $this->session->set_flashdata('success', 'Data berhasil dihapus.');
+        }
 
-    //     $ship_exists = $this->M_ship->get_by_imo($imo);
-    //     if (!$ship_exists) {
-    //         $this->M_ship->insert($ppkb_data);
-    //     }
+        redirect('admin/ppkb');
+    }
 
-    //     $agent_exists = $this->M_agents->get_by_name($agent_name);
-    //     if (!$agent_exists) {
-    //         $this->M_agents->insert(['agent_name' => $agent_name]);
-    //     }
 
-    //     // Insert PPKB
-    //     $this->M_ppkb->insert($ppkb_data);
-
-    //     $this->session->unset_userdata('ppkb_temp'); // Hapus session
-    //     $this->session->set_flashdata('success', 'PPKB berhasil disimpan!');
-    //     redirect('admin/ppkb');
-    // }
 
     public function upload_file($field_name)
     {

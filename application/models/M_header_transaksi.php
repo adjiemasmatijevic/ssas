@@ -35,7 +35,7 @@ class M_header_transaksi extends CI_Model
 
     public function delete($id)
     {
-        return ($this->db->where('id', $id)->delete('header_transaksi')) ? true : false;
+        return ($this->db->where('kategori_trx_id', $id)->delete('header_transaksi')) ? true : false;
     }
 
     public function getOne($id)

@@ -48,8 +48,12 @@
                                  </a>
                                  <a class="btn btn-sm btn-outline-dark">
                                      Edit</a>
-                                 <a class="btn btn-sm btn-outline-dark">
-                                     Hapus</a>
+                                 <a href="<?= base_url('admin/delete?id=' . urldecode($h['kategori_trx_id'])) ?>"
+                                     class="btn btn-sm btn-outline-dark"
+                                     onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                     Hapus
+                                 </a>
+
                              </td>
                          </tr>
                  <?php

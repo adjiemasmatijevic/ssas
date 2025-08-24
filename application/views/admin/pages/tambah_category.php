@@ -8,7 +8,7 @@
           </div>
       </nav>
       <form action="<?= base_url('admin/insert_category') ?>" method="post">
-          <div class="row mt-4">
+          <div class="row">
               <div class="col-md-4">
                   <label>SSAS Code</label>
                   <input type="text" name="ssas_code" value="<?= $ssas_code ?>" class="form-control" readonly>
