@@ -11,16 +11,16 @@
           <div class="row">
               <div class="col-md-4">
                   <label>SSAS Code</label>
-                  <input type="text" name="ssas_code" value="<?= $ssas_code ?>" class="form-control" readonly>
-                  <input type="text" name="no_header" class="form-control" readonly value="<?= $random ?>">
+                  <input type="text" name="ssas_code" value="<?= $ssas_code ?>" readonly>
+                  <input type="text" name="no_header" readonly value="<?= $random ?>">
               </div>
               <div class="col-md-4">
                   <label>Nama Agen Kapal</label>
-                  <input type="text" name="nama_agen" class="form-control" required>
+                  <input type="text" name="nama_agen" required>
               </div>
               <div class="col-md-4">
                   <label>Tipe Kapal</label>
-                  <select name="tipe_kapal" class="form-control" required>
+                  <select name="tipe_kapal" required>
                       <option value="">--pilih Type--</option>
                       <option value="Motor Vessel">Motor Vessel</option>
                       <option value="Tanker">Tanker</option>

@@ -181,8 +181,8 @@
                 <td><?= $ppkb['company_address']; ?></td>
             </tr>
         </table>
-        <a href="<?= base_url('admin/tambah_ppkb'); ?>" class="btn btn-warning">Edit</a>
-        <a href="<?= base_url('admin/insert_ppkb'); ?>" class="btn btn-primary">Simpan</a>
+        <a href="<?= base_url('admin/tambah_ppkb'); ?>"><button>Edit</button></a>
+        <a href="<?= base_url('admin/insert_ppkb'); ?>"><button>Simpan</button></a>
     </div>
 
 

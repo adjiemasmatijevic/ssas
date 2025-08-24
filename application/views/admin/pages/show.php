@@ -183,19 +183,20 @@
         </table>
         <div class="mt-3">
             <?php if (!empty($ppkb['ship_file'])): ?>
-                <a href="<?= base_url('uploads/' . rawurlencode($ppkb['ship_file'])); ?>" target="_blank" class="btn btn-info">
-                    View Ship Particular
+                <a href="<?= base_url('uploads/' . rawurlencode($ppkb['ship_file'])); ?>" target="_blank">
+
+                    <button>View Ship Particular</button>
                 </a>
             <?php endif; ?>
 
             <?php if (!empty($ppkb['tonnage_certificate'])): ?>
-                <a href="<?= base_url('uploads/' . rawurlencode($ppkb['tonnage_certificate'])); ?>" target="_blank" class="btn btn-info">
-                    View Tonnage Certificate
+                <a href="<?= base_url('uploads/' . rawurlencode($ppkb['tonnage_certificate'])); ?>" target="_blank">
+                    <button>View Tonnage Certificate</button>
                 </a>
             <?php endif; ?>
 
-            <a href="<?= base_url('admin/ppkb'); ?>" class="btn btn-secondary">
-                Kembali
+            <a href="<?= base_url('admin/ppkb'); ?>">
+                <button>Kembali</button>
             </a>
         </div>
 

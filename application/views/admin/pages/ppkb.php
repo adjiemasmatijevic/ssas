@@ -10,8 +10,8 @@
 
 
 
-     <a href="<?= base_url('admin/tambah_category') ?>" class="btn btn-md btn-dark">
-         Tambah</a>
+     <a href="<?= base_url('admin/tambah_category') ?>">
+         <button>Tambah</button></a>
      <div class="card shadow-sm mt-3 p-3">
          <h5>LIST OF PPKB</h5>
          <table class="table mt-3">
@@ -43,15 +43,15 @@
                              <td><?= $nomor_ppkb ?></td>
                              <td><?= $vesselMov ?></td>
                              <td>
-                                 <a href="<?= base_url('admin/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-sm btn-outline-dark">
-                                     Review
+                                 <a href="<?= base_url('admin/show?id=' . urlencode($nomor_ppkb)) ?>">
+                                     <button>Review</button>
                                  </a>
-                                 <a class="btn btn-sm btn-outline-dark">
-                                     Edit</a>
+                                 <a>
+                                     <button>Edit</button></a>
                                  <a href="<?= base_url('admin/delete?id=' . urldecode($h['kategori_trx_id'])) ?>"
-                                     class="btn btn-sm btn-outline-dark"
+
                                      onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                                     Hapus
+                                     <button>Hapus</button>
                                  </a>
 
                              </td>
