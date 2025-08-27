@@ -17,10 +17,9 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['title'] = 'Dashboard';
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
+        // $this->load->view('admin/templates/header', $data);
+        // $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/dashboard', $data);
-        $this->load->view('admin/templates/footer');
     }
 
     public function ppkb()
@@ -28,10 +27,10 @@ class Admin extends CI_Controller
         $data['ppkb'] = $this->M_kategori_transaksi->all();
         $data['header'] = $this->M_header_transaksi->all();
         $data['title'] = 'Dashboard';
-        $this->load->view('admin/templates/header', $data);
-        $this->load->view('admin/templates/sidebar');
+        // $this->load->view('admin/templates/header', $data);
+        // $this->load->view('admin/templates/sidebar');
         $this->load->view('admin/pages/ppkb', $data);
-        $this->load->view('admin/templates/footer');
+        // $this->load->view('admin/templates/footer');
     }
 
     public function tambah()
