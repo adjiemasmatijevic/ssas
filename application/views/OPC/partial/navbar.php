@@ -75,16 +75,16 @@
                 </div>
             </li>
             <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                <div class="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
                     <img src="<?php echo base_url(); ?>assets/skydash/images/faces/face28.jpg" alt="profile" />
-                </a>
+                </div>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                     <a class="dropdown-item">
                         <i class="ti-settings text-primary"></i>
                         Settings
                     </a>
-                    <a class="dropdown-item">
-                        <i class="ti-power-off text-primary" href="<?= base_url('login/logout') ?>"></i>
+                    <a class="dropdown-item" href="<?= base_url('login/logout') ?>">
+                        <i class="ti-power-off text-primary"></i>
                         Logout
                     </a>
                 </div>

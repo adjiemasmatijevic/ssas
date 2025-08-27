@@ -18,5 +18,4 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/skydash/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/skydash/images/favicon.png" />
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/preview/style.css">
 </head>

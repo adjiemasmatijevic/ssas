@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Style */
+.container {
+  max-width: 700px;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: auto;
+}
+
+.headline {
+  text-align: center;
+}
+
+.headline h1 {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.headline h2 {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.headline h3 {
+  font-size: 13px;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.logo-lang {
+  align-items: center;
+  align-content: center;
+  padding-left: 100px;
+}
+
+.logo-dis {
+  align-items: center;
+  align-content: center;
+  padding-left: 100px;
+}
+
+hr {
+  border: none;
+  height: 15px;
+  background-color: black;
+}
+
+.form-container {
+  margin: 20px 100px 0px 100px;
+}
+
+.form-container h5 {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.form-container h5 span {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.ppkb_number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ppkb_number h3 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.data-item span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.cargo {
+  display: flex;
+}
+
+.cargo h3 {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.cargo h4 {
+  font-size: 17px;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.geared h4 {
+  font-size: 17px;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.loading-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.loading-table thead th {
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid black;
+  border-bottom: 2px solid #ccc; /* garis bawah header */
+}
+
+.loading-table tbody td {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 15px;
+  color: #555;
+  border-bottom: 1px solid black; /* garis tipis antar baris */
+}
+
+.loading-table tbody tr:nth-child(even) {
+  background-color: #fafafa; /* zebra striping */
+}
+
+.loading-table tbody tr:hover {
+  background-color: #f0f8ff; /* efek hover */
+}
+
+.footer-section {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.company {
+  font-weight: bold;
+}
+
+.ship-agent {
+  text-align: center;
+  font-size: 14px;
+}
+
+.date-info {
+  text-align: right;
+}
+
+.footer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.footer-table th {
+  text-align: left;
+  padding: 8px;
+  background-color: #f4f4f4;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.footer-table td {
+  vertical-align: top;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+}
