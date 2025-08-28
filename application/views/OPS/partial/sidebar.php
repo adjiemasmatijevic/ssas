@@ -60,7 +60,7 @@
             </a>
             <div class="collapse" id="service">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>admin/ppkb">PPKB</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?php echo base_url(); ?>OPS/ppkb">PPKB</a></li>
                     <li class="nav-item"> <a class="nav-link" href="#">SPK</a></li>
                     <li class="nav-item"> <a class="nav-link" href="#">SPBPJ</a>
                     </li>
@@ -102,6 +102,12 @@
             <a class="nav-link" href="#">
                 <i class="icon-head menu-icon"></i>
                 <span class="menu-title">Profil</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('login/logout') ?>">
+                <i class="ti-power-off"></i>
+                <span class="menu-title">Logout</span>
             </a>
         </li>
     </ul>

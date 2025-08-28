@@ -61,9 +61,9 @@
                                                         <a href="<?= base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-primary btn-sm">
                                                             Review
                                                         </a>
-                                                        <a href="<?= base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-info btn-sm">
+                                                        <!-- <a href="<?= base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-info btn-sm">
                                                             Buat PPKB
-                                                        </a>
+                                                        </a> -->
                                                         <a href="<?= base_url('OPS/edit?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-warning btn-sm">
                                                             Edit
                                                         </a>

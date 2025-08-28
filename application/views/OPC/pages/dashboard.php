@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- head -->
-<?php $this->load->view('admin/partial/head')  ?>
+<?php $this->load->view('OPC/partial/head')  ?>
 
 <body>
     <div class="container-scroller">
         <!-- navbar -->
-        <?php $this->load->view('admin/partial/navbar')  ?>
+        <?php $this->load->view('OPC/partial/navbar')  ?>
 
         <div class="container-fluid page-body-wrapper">
             <!-- setting-panel -->
-            <?php $this->load->view('admin/partial/setting-panel')  ?>
+            <?php $this->load->view('OPC/partial/setting-panel')  ?>
             <!-- menu sidebar -->
-            <?php $this->load->view('admin/partial/sidebar')  ?>
+            <?php $this->load->view('OPC/partial/sidebar')  ?>
 
             <div class="main-panel">
                 <div class="content-wrapper">
@@ -401,7 +401,7 @@
                 <!-- content-wrapper ends -->
 
                 <!-- footer -->
-                <?php $this->load->view('admin/partial/footer') ?>
+                <?php $this->load->view('OPC/partial/footer') ?>
 
             </div>
             <!-- main-panel ends -->
