@@ -18,7 +18,7 @@
                 <div class="content-wrapper">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Buat PPKB Batu</h4>
+                            <h4 class="card-title">Buat PPKB Baru</h4>
                             <p class="card-description">Isi data berikut untuk membuat PPKB baru</p>
 
                             <!-- Form Start -->
@@ -28,7 +28,7 @@
                                     <div class="form-group col-md-4">
                                         <label for="ssas_code">SSAS Code</label>
                                         <input type="text" class="form-control" id="ssas_code" name="ssas_code" value="<?= $ssas_code ?>" readonly>
-                                        <input type="text" name="no_header" value="<?= $random ?>">
+                                        <input type="hidden" name="no_header" value="<?= $random ?>">
                                     </div>
                                     <!-- Nama Agen Kapal -->
                                     <div class="form-group col-md-4">

@@ -44,4 +44,10 @@ class M_kategori_transaksi extends CI_Model
         $data = $this->db->get('kategori_transaksi')->row_array();
         return (count((array)$data) > 0) ? $data : false;
     }
+    public function getOnebySass($id)
+    {
+        $this->db->where('kd_trx', $id);
+        $data = $this->db->get('kategori_transaksi')->row();
+        return (count((array)$data) > 0) ? $data : false;
+    }
 }

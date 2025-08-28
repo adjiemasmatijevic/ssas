@@ -45,7 +45,7 @@
                                             $nomor_ppkb = $this->M_ppkb->getOneByHeader($h['no_header'])->ppkb_number;
                                             $vesselMov = $this->M_ppkb->getOneByHeader($h['no_header'])->vessel_movement;
                                             $status = $this->M_ppkb->getOneByHeader($h['no_header'])->status;
-
+                                            $type = $this->M_kategori_transaksi->getOnebySass($h['kategori_trx_id'])->tipe_kapal;
 
                                     ?>
                                             <tr>
@@ -58,7 +58,10 @@
                                                 <td> <?= $status == 0 ? 'Review OPC' : ($status == 1 ? 'Approve' : 'Status Tidak Dikenal') ?></td>
                                                 <td>
                                                     <div class="btn-group" role="group" aria-label="Action Buttons">
-                                                        <a href="<?= base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-primary btn-sm">
+                                                        <a href="<?= ($type == 'Tug & Barge')
+                                                                        ? base_url('OPS/show2?id=' . urlencode($nomor_ppkb))
+                                                                        : base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>"
+                                                            class="btn btn-primary btn-sm">
                                                             Review
                                                         </a>
                                                         <!-- <a href="<?= base_url('OPS/show?id=' . urlencode($nomor_ppkb)) ?>" class="btn btn-info btn-sm">
