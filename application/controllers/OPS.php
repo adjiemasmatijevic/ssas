@@ -112,15 +112,36 @@ class OPS extends CI_Controller
     {
         $ppkb_data = $this->input->post();
 
-        // Upload file jika ada di tahap awal
-        $ship_file = $this->upload_file('ship_particular_file');
-        $tonnage_certificate = $this->upload_file('tonnage_certificate');
+        // Default value jika tidak ada file
+        $ppkb_data['ship_particular_file'] = '';
+        $ppkb_data['tonnage_certificate'] = '';
+        $ppkb_data['nib'] = '';
+        $ppkb_data['pmku'] = '';
+        $ppkb_data['skt'] = '';
+        $ppkb_data['sppkp'] = '';
+        $ppkb_data['sktd'] = '';
 
-        if ($ship_file) {
+        // Upload file
+        if ($ship_file = $this->upload_file('ship_particular_file', 'shipPart')) {
             $ppkb_data['ship_particular_file'] = $ship_file;
         }
-        if ($tonnage_certificate) {
+        if ($tonnage_certificate = $this->upload_file('tonnage_certificate', 'tonnageCert')) {
             $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
+        }
+        if ($nib = $this->upload_file('nib', 'nib')) {
+            $ppkb_data['nib'] = $nib;
+        }
+        if ($pmku = $this->upload_file('pmku', 'pmku')) {
+            $ppkb_data['pmku'] = $pmku;
+        }
+        if ($skt = $this->upload_file('skt', 'skt')) {
+            $ppkb_data['skt'] = $skt;
+        }
+        if ($sppkp = $this->upload_file('sppkp', 'sppkp')) {
+            $ppkb_data['sppkp'] = $sppkp;
+        }
+        if ($sktd = $this->upload_file('sktd', 'sktd')) {
+            $ppkb_data['sktd'] = $sktd;
         }
 
         $this->session->set_userdata('ppkb_temp', $ppkb_data);
@@ -129,31 +150,57 @@ class OPS extends CI_Controller
         $this->load->view('OPS/pages/ppkb/preview_ppkb', $data);
     }
 
+
     public function preview_ppkb2()
     {
         $ppkb_data = $this->input->post();
 
-        // Upload file untuk kapal pertama
-        $ship_file = $this->upload_file('ship_particular_file');
-        $tonnage_certificate = $this->upload_file('tonnage_certificate');
+        //Dokumen Kapal
+        $ppkb_data['ship_particular_file'] = '';
+        $ppkb_data['tonnage_certificate'] = '';
+        $ppkb_data['nib'] = '';
+        $ppkb_data['pmku'] = '';
+        $ppkb_data['skt'] = '';
+        $ppkb_data['sppkp'] = '';
+        $ppkb_data['sktd'] = '';
 
-        // Upload file untuk kapal kedua
-        $ship_file2 = $this->upload_file('ship_particular_file2');
-        $tonnage_certificate2 = $this->upload_file('tonnage_certificate2');
+        // // Upload file untuk kapal pertama
+        // $ship_file = $this->upload_file('ship_particular_file');
+        // $tonnage_certificate = $this->upload_file('tonnage_certificate');
+
+        // // Upload file untuk kapal kedua
+        // $ship_file2 = $this->upload_file('ship_particular_file2');
+        // $tonnage_certificate2 = $this->upload_file('tonnage_certificate2');
 
         // Simpan nama file ke array
-        if ($ship_file) {
+        if ($ship_file = $this->upload_file('ship_particular_file', 'shipPart')) {
             $ppkb_data['ship_particular_file'] = $ship_file;
         }
-        if ($tonnage_certificate) {
+        if ($tonnage_certificate = $this->upload_file('tonnage_certificate', 'tonnageCert')) {
             $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
         }
-        if ($ship_file2) {
+        if ($ship_file2 = $this->upload_file('ship_particular_file2', 'shipPart')) {
             $ppkb_data['ship_particular_file2'] = $ship_file2;
         }
-        if ($tonnage_certificate2) {
+        if ($tonnage_certificate2 = $this->upload_file('tonnage_certificate2', 'tonnageCert')) {
             $ppkb_data['tonnage_certificate2'] = $tonnage_certificate2;
         }
+        if ($nib = $this->upload_file('nib', 'nib')) {
+            $ppkb_data['nib'] = $nib;
+        }
+        if ($pmku = $this->upload_file('pmku', 'pmku')) {
+            $ppkb_data['pmku'] = $pmku;
+        }
+        if ($skt = $this->upload_file('skt', 'skt')) {
+            $ppkb_data['skt'] = $skt;
+        }
+        if ($sppkp = $this->upload_file('sppkp', 'sppkp')) {
+            $ppkb_data['sppkp'] = $sppkp;
+        }
+        if ($sktd = $this->upload_file('sktd', 'sktd')) {
+            $ppkb_data['sktd'] = $sktd;
+        }
+
 
         // Simpan semua ke session
         $this->session->set_userdata('ppkb_temp', $ppkb_data);
@@ -263,13 +310,11 @@ class OPS extends CI_Controller
             'updated_at' => date('Y-m-d H:i:s')
         ];
 
-        // Cek apakah kapal sudah ada
         $ship_exists = $this->M_ship->get_by_imo($imo);
         if (!$ship_exists) {
             $this->M_ship->insert($ship_data);
         }
 
-        // Ship Particular
         $agent_data = [
             'agent_code' => $random,
             'name' => $ppkb['agent_name'],
@@ -279,22 +324,24 @@ class OPS extends CI_Controller
             'NPWP' => $ppkb['npwp'],
             'email' => $ppkb['email'],
             'address' => $ppkb['company_address'],
-            'updated_at' => date('Y-m-d H:i:s')
+            'updated_at' => date('Y-m-d H:i:s'),
+            'NIB' => $ppkb['nib'],
+            'PMKU' => $ppkb['pmku'],
+            'SKT' => $ppkb['skt'],
+            'SPPKP' => $ppkb['sppkp'],
+            'SKTD' => $ppkb['sktd'],
+            'nib_date' => $ppkb['nib_date'],
+            'pmku_date' => $ppkb['pmku_date'],
+            'skt_date' => $ppkb['skt_date'],
+            'sppkp_date' => $ppkb['sppkp_date'],
+            'sktd_date' => $ppkb['sktd_date'],
         ];
-        // Cek apakah agent sudah ada
+
         $agent_exists = $this->M_agents->get_by_name($agent_name);
         if (!$agent_exists) {
             $this->M_agents->insert($agent_data);
         }
 
-        // Upload file jika ada
-        $ship_file = $this->upload_file('ship_particular_file');
-        $tonnage_certificate = $this->upload_file('tonnage_certificate');
-        $ppkb_data['ship_particular_file'] = $ship_file;
-        $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
-
-
-        // Insert ke PPKB
         $ppkb_data = [
             'IMO' => $imo,
             'no_header' => $ppkb['no_header'],
@@ -333,6 +380,7 @@ class OPS extends CI_Controller
         $this->session->set_flashdata('success', 'Data berhasil disimpan');
         redirect('OPS/ppkb');
     }
+
 
     public function insert_ppkb2()
     {
@@ -387,7 +435,6 @@ class OPS extends CI_Controller
         if (!$ship_exists) {
             $this->M_ship->insert_batch($ship_data);
         }
-
         // Ship Particular
         $agent_data = [
             'agent_code' => $random,
@@ -398,7 +445,17 @@ class OPS extends CI_Controller
             'NPWP' => $ppkb['npwp'],
             'email' => $ppkb['email'],
             'address' => $ppkb['company_address'],
-            'updated_at' => date('Y-m-d H:i:s')
+            'updated_at' => date('Y-m-d H:i:s'),
+            'NIB' => $ppkb['nib'],
+            'PMKU' => $ppkb['pmku'],
+            'SKT' => $ppkb['skt'],
+            'SPPKP' => $ppkb['sppkp'],
+            'SKTD' => $ppkb['sktd'],
+            'nib_date' => $ppkb['nib_date'],
+            'pmku_date' => $ppkb['pmku_date'],
+            'skt_date' => $ppkb['skt_date'],
+            'sppkp_date' => $ppkb['sppkp_date'],
+            'sktd_date' => $ppkb['sktd_date'],
         ];
         // Cek apakah agent sudah ada
         $agent_exists = $this->M_agents->get_by_name($agent_name);
@@ -406,22 +463,22 @@ class OPS extends CI_Controller
             $this->M_agents->insert($agent_data);
         }
 
-        // // Upload file jika ada
+        // // // Upload file jika ada
+        // // $ship_file = $this->upload_file('ship_particular_file');
+        // // $tonnage_certificate = $this->upload_file('tonnage_certificate');
+        // // $ppkb_data['ship_particular_file'] = $ship_file;
+        // // $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
+
+        // // //File Ship 2
+        // // $ship_file2 = $this->upload_file('ship_particular_file2');
+        // // $tonnage_certificate2 = $this->upload_file('tonnage_certificate2');
+        // // $ppkb_data['ship_particular_file2'] = $ship_file2;
+        // // $ppkb_data['tonnage_certificate2'] = $tonnage_certificate2;
+
         // $ship_file = $this->upload_file('ship_particular_file');
         // $tonnage_certificate = $this->upload_file('tonnage_certificate');
-        // $ppkb_data['ship_particular_file'] = $ship_file;
-        // $ppkb_data['tonnage_certificate'] = $tonnage_certificate;
-
-        // //File Ship 2
         // $ship_file2 = $this->upload_file('ship_particular_file2');
         // $tonnage_certificate2 = $this->upload_file('tonnage_certificate2');
-        // $ppkb_data['ship_particular_file2'] = $ship_file2;
-        // $ppkb_data['tonnage_certificate2'] = $tonnage_certificate2;
-
-        $ship_file = $this->upload_file('ship_particular_file');
-        $tonnage_certificate = $this->upload_file('tonnage_certificate');
-        $ship_file2 = $this->upload_file('ship_particular_file2');
-        $tonnage_certificate2 = $this->upload_file('tonnage_certificate2');
 
         // Insert ke PPKB
         $ppkb_data = [
@@ -497,19 +554,32 @@ class OPS extends CI_Controller
 
 
 
-    public function upload_file($field_name)
+    public function upload_file($field_name, $prefix = '')
     {
         if (!empty($_FILES[$field_name]['name'])) {
-            $config['upload_path'] = './uploads/';
+            $config['upload_path']   = './uploads/';
             $config['allowed_types'] = 'pdf';
-            $config['max_size'] = 3072; // 3MB
-            $this->load->library('upload', $config);
+            $config['max_size'] = 5120; // 5 MB
+
+            // Rename file agar mudah ditrack
+            $ext = pathinfo($_FILES[$field_name]['name'], PATHINFO_EXTENSION);
+            $new_name = $prefix . '_' . time() . '_' . uniqid() . '.' . $ext;
+            $config['file_name'] = $new_name;
+
+            // **Inisialisasi ulang setiap kali**
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+
             if ($this->upload->do_upload($field_name)) {
-                return $this->upload->data('file_name');
+                return $new_name;
+            } else {
+                // Debugging error jika gagal
+                log_message('error', 'Upload gagal: ' . $this->upload->display_errors());
             }
         }
         return null;
     }
+
 
     public function generate_ssas_code()
     {

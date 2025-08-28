@@ -153,7 +153,8 @@
                         </div>
 
                         <div class="row mt-3">
-                            <div class="col-md-3"><label>Shipper/Consignee</label><input type="text" class="form-control" name="shipper"></div>
+                            <div class="col-md-3"><label>Shipper</label><input type="text" class="form-control" name="shipper"></div>
+                            <div class="col-md-3"><label>Consignee</label><input type="text" class="form-control" name="consignee"></div>
                             <div class="col-md-3"><label>Kind Of Cargo</label>
                                 <select class="form-control" name="kind_cargo">
                                     <option value="">---- Pilihan ----</option>
@@ -185,11 +186,37 @@
                         <!-- Upload Dokumen Section -->
                         <h5 class="mt-4 font-weight-bold border-bottom pb-2">Dokumen Perusahaan</h5>
                         <div class="row mt-3">
-                            <div class="col-md-3"><label>Upload NIB Document</label><input type="file" class="form-control" name="nib_document"></div>
-                            <div class="col-md-3"><label>Upload PMKU Document</label><input type="file" class="form-control" name="pmku_document"></div>
-                            <div class="col-md-3"><label>Upload SPPKP Document</label><input type="file" class="form-control" name="sppkp_document"></div>
-                            <div class="col-md-3"><label>Upload SKTD Pajak Document</label><input type="file" class="form-control" name="sktd_document"></div>
+                            <div class="col-md-3">
+                                <label>Upload NIB Document</label>
+                                <input type="file" class="form-control mb-2" name="nib">
+                                <input type="date" class="form-control" name="nib_date">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label>Upload PMKU Document</label>
+                                <input type="file" class="form-control mb-2" name="pmku">
+                                <input type="date" class="form-control" name="pmku_date">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label>Upload SPPKP Document</label>
+                                <input type="file" class="form-control mb-2" name="sppkp">
+                                <input type="date" class="form-control" name="sppkp_date">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label>Upload SKTD Document</label>
+                                <input type="file" class="form-control mb-2" name="sktd">
+                                <input type="date" class="form-control" name="sktd_date">
+                            </div>
+
+                            <div class="col-md-3 mt-3">
+                                <label>Upload SKT Pajak Document</label>
+                                <input type="file" class="form-control mb-2" name="skt">
+                                <input type="date" class="form-control" name="skt_date">
+                            </div>
                         </div>
+
 
                         <!-- Submit -->
                         <div class="mt-4 text-right">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 28, 2025 at 02:49 AM
+-- Generation Time: Aug 28, 2025 at 05:37 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -38,17 +38,36 @@ CREATE TABLE `agents` (
   `email` varchar(150) DEFAULT NULL,
   `address` text,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `NIB` varchar(255) DEFAULT NULL,
+  `PMKU` varchar(255) DEFAULT NULL,
+  `SKT` varchar(255) DEFAULT NULL,
+  `SPPKP` varchar(255) DEFAULT NULL,
+  `SKTD` varchar(255) DEFAULT NULL,
+  `nib_date` date DEFAULT NULL,
+  `pmku_date` date DEFAULT NULL,
+  `skt_date` date DEFAULT NULL,
+  `sppkp_date` date DEFAULT NULL,
+  `sktd_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `agents`
 --
 
-INSERT INTO `agents` (`id`, `agent_code`, `name`, `phone`, `office_phone`, `PIC`, `NPWP`, `email`, `address`, `created_at`, `updated_at`) VALUES
-(1, 'SHPA-4018', 'MAS TRIA', '094888', '094888', '233', '12030', 'tirta@mail.com', 'Tegal', '2025-08-24 04:13:31', '2025-08-24 04:13:31'),
-(2, 'SHPA-4803', 'PT MANDIRI', '0484882', '0484882', '3001', '2000', 'diri@mail.com', 'BORNEO', '2025-08-24 04:22:34', '2025-08-24 04:22:34'),
-(3, 'SHPA-1589', 'PT MAS SORM', '03982809233', '03982809233', '32341', '4103049', 'sor@mail.com', 'Tegal', '2025-08-24 04:39:16', '2025-08-24 04:39:16');
+INSERT INTO `agents` (`id`, `agent_code`, `name`, `phone`, `office_phone`, `PIC`, `NPWP`, `email`, `address`, `created_at`, `updated_at`, `NIB`, `PMKU`, `SKT`, `SPPKP`, `SKTD`, `nib_date`, `pmku_date`, `skt_date`, `sppkp_date`, `sktd_date`) VALUES
+(1, 'SHPA-4018', 'MAS TRIA', '094888', '094888', '233', '12030', 'tirta@mail.com', 'Tegal', '2025-08-24 04:13:31', '2025-08-24 04:13:31', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, 'SHPA-4803', 'PT MANDIRI', '0484882', '0484882', '3001', '2000', 'diri@mail.com', 'BORNEO', '2025-08-24 04:22:34', '2025-08-24 04:22:34', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'SHPA-1589', 'PT MAS SORM', '03982809233', '03982809233', '32341', '4103049', 'sor@mail.com', 'Tegal', '2025-08-24 04:39:16', '2025-08-24 04:39:16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'SHPA-6096', 'NIAHARJA', '093883939', '093883939', '202002', '20000', 'ni@mail.com', 'Brebes', '2025-08-28 03:45:15', '2025-08-28 03:45:15', NULL, '05__2_Bab_2.pdf', NULL, 'JURNAL+MERKURIUS+VOL_2+NO_5+SEPTERMBER+2024(Muhamad+Dipa+Maulana).pdf', NULL, '2025-08-29', '2025-08-30', '2025-08-30', '2025-08-23', '2025-08-30'),
+(5, 'SHPA-8495', 'Mandiri', '299', '299', '20', '202', 'mas@mail.com', 'g', '2025-08-28 03:55:49', '2025-08-28 03:55:49', '21040025_dns1.pdf', '58157-Article_Text-126577-1-10-20240105.pdf', 'Tutorial_Instalasi_SEB_20241.pdf', '05__2_Bab_21.pdf', 'Surat_Lamaran_Kerja_2.pdf', '2025-08-29', '2025-09-05', '2025-08-30', '2025-08-29', '2025-08-29'),
+(6, 'SHPA-5577', 'QRY', '0299393', '0299393', '202', '020', 'gi@mail.com', 'gi', '2025-08-28 04:00:26', '2025-08-28 04:00:26', '58157-Article_Text-126577-1-10-202401051.pdf', NULL, '21040025_dns2.pdf', 'SyaratPendaftaranUjianSidangTugasAkhir2024.pdf', NULL, '2025-08-01', '2025-08-07', '2025-09-06', '2025-08-14', '2025-08-06'),
+(7, 'SHPA-6051', 'mom', '09929', '09929', '11', '11', 'mo@mal.com', 'fi', '2025-08-28 04:15:09', '2025-08-28 04:15:09', NULL, NULL, NULL, NULL, NULL, '2025-08-28', '2025-09-05', '2025-08-15', '2025-08-28', '2025-08-27'),
+(8, 'SHPA-9709', 'MIAGA', '094888', '094888', '2992', '29929', 'ma@mail.com', 'jjjj', '2025-08-28 04:23:42', '2025-08-28 04:23:42', 'nib_20250828_112339.pdf', 'pmku_20250828_112339.pdf', 'skt_20250828_112339.pdf', '', 'sktd_20250828_112339.pdf', '2025-08-28', '2025-08-14', '2025-08-23', '2025-08-20', '2025-08-11'),
+(9, 'SHPA-7889', 'bogares', '0992', '0992', '22', '22', 'b@fmi.com', 'ge', '2025-08-28 04:44:32', '2025-08-28 04:44:32', '_1756356269_68afdead30a8f.pdf', '', '_1756356269_68afdead3389d.pdf', '_1756356269_68afdead35e75.pdf', '_1756356269_68afdead373d5.pdf', '2025-08-28', '2025-09-05', '2025-08-16', '2025-08-21', '2025-08-21'),
+(10, 'SHPA-7172', 'Ibot', '22', '22', '202', '2020', 'bo@gmial.com', 'fs', '2025-08-28 05:02:21', '2025-08-28 05:02:21', 'nib_1756357338_68afe2da7b134.pdf', 'pmku_1756357338_68afe2da7cc23.pdf', 'skt_1756357338_68afe2da7f122.pdf', 'sppkp_1756357338_68afe2da8143a.pdf', 'sktd_1756357338_68afe2da829a7.pdf', '2025-08-28', '2025-08-28', '2025-08-29', '2025-08-28', '2025-08-27'),
+(11, 'SHPA-4256', 'MOUEIS', '03982809233', '03982809233', '3001', '333333', 'mas@mail.com', 'www', '2025-08-28 05:17:02', '2025-08-28 05:17:02', 'nib_1756358215_68afe64712a76.pdf', 'pmku_1756358215_68afe64714e0d.pdf', 'skt_1756358215_68afe647173d1.pdf', 'sppkp_1756358215_68afe64776776.pdf', 'sktd_1756358215_68afe64777833.pdf', '2025-08-29', '2025-09-06', '2025-09-05', '2025-08-29', '2025-08-28'),
+(12, 'SHPA-5972', 'PT RAGUANR', '09828381', '09828381', '29929', '29929', 'r@gmail.com', 'Brebes', '2025-08-28 05:36:43', '2025-08-28 05:36:43', 'nib_1756359398_68afeae659ebf.pdf', 'pmku_1756359398_68afeae65b368.pdf', 'skt_1756359398_68afeae65e8df.pdf', 'sppkp_1756359398_68afeae660ea0.pdf', 'sktd_1756359398_68afeae6626a9.pdf', '2025-08-28', '2025-08-29', '2025-09-04', '2025-08-29', '2025-08-29');
 
 -- --------------------------------------------------------
 
@@ -94,9 +113,8 @@ INSERT INTO `header_transaksi` (`id`, `kategori_trx_id`, `agent_id`, `no_header`
 (15, '0015/WED/VIII/2025', 'PT MATARAMEJA', 'HDR-6068', '2025-08-24', 'Masuk', NULL, '2025-08-24 05:32:36', NULL),
 (18, '0002/WED/VIII/2025', 'PT MAS TIRTA', 'HDR-9046', '2025-08-25', 'Masuk', NULL, '2025-08-24 17:00:09', NULL),
 (23, '0003/WED/VIII/2025', 'PT MAS TIRTA', 'HDR-1551', '2025-08-27', 'Masuk', NULL, '2025-08-27 13:06:57', NULL),
-(25, '0004/WED/VIII/2025', 'PT Hadar', 'HDR-5542', '2025-08-28', 'Masuk', NULL, '2025-08-28 01:45:49', NULL),
-(26, '0005/WED/VIII/2025', 'PT ISMAIL MAEL', 'HDR-8097', '2025-08-28', 'Masuk', NULL, '2025-08-28 02:09:46', NULL),
-(28, '0006/WED/VIII/2025', 'PT MAS TIRTA', 'HDR-1592', '2025-08-28', 'Masuk', NULL, '2025-08-28 02:27:11', NULL);
+(37, '0004/WED/VIII/2025', 'PT Sinar Putra', 'HDR-1896', '2025-08-28', 'Masuk', NULL, '2025-08-28 05:14:09', NULL),
+(38, '0005/WED/VIII/2025', 'PT IBOT', 'HDR-7707', '2025-08-28', 'Masuk', NULL, '2025-08-28 05:34:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -147,9 +165,8 @@ INSERT INTO `kategori_transaksi` (`id`, `kd_trx`, `tipe_kapal`, `customer_id`, `
 (15, '0015/WED/VIII/2025', 'Tanker', 20, '2025-08-24', NULL, 'Masuk', NULL, '2025-08-24 05:32:36', NULL),
 (18, '0002/WED/VIII/2025', '', 20, '2025-08-25', NULL, 'Masuk', NULL, '2025-08-24 17:00:09', NULL),
 (23, '0003/WED/VIII/2025', 'Tanker', 20, '2025-08-27', NULL, 'Masuk', NULL, '2025-08-27 13:06:57', NULL),
-(25, '0004/WED/VIII/2025', 'Tug & Barge', 20, '2025-08-28', NULL, 'Masuk', NULL, '2025-08-28 01:45:49', NULL),
-(26, '0005/WED/VIII/2025', 'Tug & Barge', 20, '2025-08-28', NULL, 'Masuk', NULL, '2025-08-28 02:09:46', NULL),
-(28, '0006/WED/VIII/2025', 'Tug & Barge', 20, '2025-08-28', NULL, 'Masuk', NULL, '2025-08-28 02:27:11', NULL);
+(37, '0004/WED/VIII/2025', 'Tug & Barge', 20, '2025-08-28', NULL, 'Masuk', NULL, '2025-08-28 05:14:09', NULL),
+(38, '0005/WED/VIII/2025', 'Motor Vessel', 20, '2025-08-28', NULL, 'Masuk', NULL, '2025-08-28 05:34:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -210,7 +227,18 @@ INSERT INTO `ppkb` (`id`, `ppkb_number`, `IMO`, `IMO2`, `no_header`, `ship_name`
 (11, '0005/LLL.IDWED/PPKB/VIII/2025', '99', '29918', 'HDR-5542', 'KP. Mongolia UT', '230', 'BENY ORTEGA', 'MAS TRIA', 'Shifting IN', '2', 'JAPAN', 'PT TIKI', '21040025_dns_35.pdf', 'Turnitin5.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 4, 20, 'HAWAII', 'SAN JUAN', '2025-08-29 11:11:00', '2025-09-02 12:11:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 2, 'PT SS', 'Dock 1', '', 0, '2025-08-28 02:00:29', '2025-08-28 02:00:29'),
 (12, '0006/LLL.IDWED/PPKB/VIII/2025', '928', '8989', 'HDR-8097', 'BROSIED KP', '230', 'BENY', 'MAS TRIA', 'IN', '3', 'WEDA', 'PT JNEWE', 'BAB_I.pdf', 'BAB_II.pdf', NULL, NULL, 'Dry Bulk', 'Yes', 4, 20, 'BANTEN', 'AUSTRIA', '2025-08-28 11:11:00', '2025-09-04 12:22:00', 'Unloading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 2, 'PT SS', 'Dock 2', '', 0, '2025-08-28 02:13:22', '2025-08-28 02:13:22'),
 (13, '0007/LLL.IDWED/PPKB/VIII/2025', '4918299', '8989', 'HDR-8133', 'KP Marta Blue', '20', 'BENY', 'MAS TRIA', 'Shifting Out', '1', 'BAHAMAS', 'PT JNEWE', 'Laporan_Stok_Seluruh_Barang.pdf', 'astuti,+728_+JPT_Pendekatan+Penelitian+Pendidik+2896-2910.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-28 11:01:00', '2025-09-04 12:22:00', 'Unloading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 2, 'PT SS', 'Dock 1', '', 0, '2025-08-28 02:18:45', '2025-08-28 02:18:45'),
-(14, '0008/LLL.IDWED/PPKB/VIII/2025', '12', '29918', 'HDR-1592', 'KP Marta Blue', '22', 'ben', 'MAS TRIA', 'IN', '1', 'WEDA', 'ben', '5116-11113-1-PB.pdf', '5871-21898-1-PB.pdf', 'Tutorial_Instalasi_SEB_2024.pdf', 'Laporan_Stok_Seluruh_Barang1.pdf', 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-29 11:11:00', '2025-08-31 11:11:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 02:30:05', '2025-08-28 02:30:05');
+(14, '0008/LLL.IDWED/PPKB/VIII/2025', '12', '29918', 'HDR-1592', 'KP Marta Blue', '22', 'ben', 'MAS TRIA', 'IN', '1', 'WEDA', 'ben', '5116-11113-1-PB.pdf', '5871-21898-1-PB.pdf', 'Tutorial_Instalasi_SEB_2024.pdf', 'Laporan_Stok_Seluruh_Barang1.pdf', 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-29 11:11:00', '2025-08-31 11:11:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 02:30:05', '2025-08-28 02:30:05'),
+(15, '0009/LLL.IDWED/PPKB/VIII/2025', '4918299', NULL, 'HDR-7234', 'KP TIRTA AJI', '20', 'BENY', 'NIAHARJA', 'IN', '1', 'BAHAMAS', 'PT JNEWE', '21040025_dns.pdf', 'SKL-_Gilang_.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'TANJUNG RATU', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Unloading', NULL, NULL, 'PT PNY', 'Dry Bulk', 0, 0, '', 'Dock 1', '', 0, '2025-08-28 03:45:15', '2025-08-28 03:45:15'),
+(16, '0010/LLL.IDWED/PPKB/VIII/2025', '23133', NULL, 'HDR-1042', 'KP Marta Blue', '230', 'BENY', 'Mandiri', 'IN', '2', 'WEDA', 'PT TIKI', NULL, 'SKL-_Gilang_1.pdf', NULL, NULL, 'Dry Bulk', 'Yes', 20, 2, 'HAWAII', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Loading', NULL, NULL, 'PT PNY', 'Other', 3, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 03:55:49', '2025-08-28 03:55:49'),
+(17, '0010/LLL.IDWED/PPKB/VIII/2025', '23133', NULL, 'HDR-1042', 'KP Marta Blue', '230', 'BENY', 'Mandiri', 'IN', '2', 'WEDA', 'PT TIKI', NULL, 'SKL-_Gilang_1.pdf', NULL, NULL, 'Dry Bulk', 'Yes', 20, 2, 'HAWAII', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Loading', NULL, NULL, 'PT PNY', 'Other', 3, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 03:56:34', '2025-08-28 03:56:34'),
+(18, '0012/LLL.IDWED/PPKB/VIII/2025', '4918299', NULL, 'HDR-8300', 'KP TIRTA AJI', '123', 'BENY', 'QRY', 'Shifting Out', '2', 'BAHAMAS', 'PT JNEWE', 'Turnitin6.pdf', '05__2_Bab_22.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 20, 2, 'HAWAII', 'TANJUNG RATU', '2025-01-04 11:01:00', '2025-09-03 11:11:00', 'Loading', NULL, NULL, 'PT PNY', 'Dry Bulk', 12, 3, 'JNE', 'Dock 1', '', 0, '2025-08-28 04:00:26', '2025-08-28 04:00:26'),
+(19, '0013/LLL.IDWED/PPKB/VIII/2025', '4918299', NULL, 'HDR-5176', 'BROSIED KP', '123', 'BENY', 'mom', 'IN', '2', 'BAHAMAS', 'PT TIKI', NULL, NULL, NULL, NULL, 'Liquid Bulk', 'Yes', 20, 20, 'BANTEN', 'TANJUNG RATU', '2025-08-29 11:11:00', '2025-08-28 11:01:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Liquid Bulk', 3, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 04:15:09', '2025-08-28 04:15:09'),
+(20, '0014/LLL.IDWED/PPKB/VIII/2025', '12', NULL, 'HDR-2282', 'KP TIRTA AJI', '123', 'FERDIAN', 'MIAGA', 'IN', '2', 'BAHAMAS', 'PT TIKI', '', 'tonnage_certificate_20250828_112339.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 20, 20, 'HAWAII', 'AUSTRIA', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 3, 'JNE', 'Dock 1', '', 0, '2025-08-28 04:23:42', '2025-08-28 04:23:42'),
+(21, '0015/LLL.IDWED/PPKB/VIII/2025', '23133', NULL, 'HDR-4625', 'KP TIRTA AJI', '20', 'BENY', 'bogares', 'IN', '3', 'WEDA', 'PT JNEWE', '_1756356269_68afdead2d54c.pdf', '_1756356269_68afdead2ebdf.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 0, 0, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Loading', NULL, '', '', '', 0, 0, '', '', '', 0, '2025-08-28 04:44:32', '2025-08-28 04:44:32'),
+(22, '0016/LLL.IDWED/PPKB/VIII/2025', '23133', NULL, 'HDR-1842', 'KP TIRTA AJI', '20', 'FERDIAN', 'Ibot', 'IN', '3', 'WEDA', 'PT JNEWE', 'shipPart_1756357338_68afe2da777f8.pdf', 'tonnageCert_1756357338_68afe2da7a01b.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 0, 0, '', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Unloading', NULL, '', '', '', 0, 0, '', 'Dock 1', '', 0, '2025-08-28 05:02:21', '2025-08-28 05:02:21'),
+(23, '0017/LLL.IDWED/PPKB/VIII/2025', '23133', '29918', 'HDR-1896', 'KP TIRTA AJI', '20', 'BENY', 'MOUEIS', 'IN', '1', 'BAHAMAS', 'PT JNEWE', 'shipPart_1756358215_68afe6470a885.pdf', 'tonnageCert_1756358215_68afe6470c48a.pdf', 'tonnageCert_1756358215_68afe64711015.pdf', 'shipPart_1756358215_68afe6470e2a9.pdf', 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-28 11:11:00', '2025-08-31 11:01:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 3, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 05:17:02', '2025-08-28 05:17:02'),
+(24, '0017/LLL.IDWED/PPKB/VIII/2025', '23133', '29918', 'HDR-1896', 'KP TIRTA AJI', '20', 'BENY', 'MOUEIS', 'IN', '1', 'BAHAMAS', 'PT JNEWE', 'shipPart_1756358215_68afe6470a885.pdf', 'tonnageCert_1756358215_68afe6470c48a.pdf', 'tonnageCert_1756358215_68afe64711015.pdf', 'shipPart_1756358215_68afe6470e2a9.pdf', 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-28 11:11:00', '2025-08-31 11:01:00', 'Loading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 3, 2, 'JNE', 'Dock 1', '', 0, '2025-08-28 05:18:19', '2025-08-28 05:18:19'),
+(25, '0019/LLL.IDWED/PPKB/VIII/2025', '9289', NULL, 'HDR-7707', 'KP IBOT KAJI', '2999', 'SHIFU', 'PT RAGUANR', 'IN', '1', 'JAPAN', 'PT JNE', 'shipPart_1756359398_68afeae656a99.pdf', 'tonnageCert_1756359398_68afeae658af5.pdf', NULL, NULL, 'Liquid Bulk', 'Yes', 20, 20, 'FILIPHINE', 'AUSTRIA', '2025-08-28 12:02:00', '2025-08-28 12:02:00', 'Unloading', NULL, 'PT.MORING', 'PT PNY', 'Dry Bulk', 12, 3, 'JNE', 'Dock 2', '', 0, '2025-08-28 05:36:43', '2025-08-28 05:36:43');
 
 -- --------------------------------------------------------
 
@@ -287,7 +315,8 @@ INSERT INTO `ship` (`id`, `IMO`, `ship_name`, `call_sign`, `ship_owner`, `flag`,
 (7, '928', 'BROSIED KP', '230', 'SORMAN', 'PANAMA', '33', '20', 'JAWA', '40', '28', '100', '199', '2025-08-28 02:13:22', '2025-08-28 02:13:22'),
 (8, '8989', 'KP ALUL', '200', 'MIZUHARA', 'INDONESIA', '202', '200', 'JAPAN', '299', '200', '233', '233', '2025-08-28 02:13:22', '2025-08-28 02:13:22'),
 (11, '12', 'KP Marta Blue', '22', 'ber', 'PANAMA', '332', '22', 'pan', '40', '22', '22', '22', '2025-08-28 02:30:05', '2025-08-28 02:30:05'),
-(12, '29918', 'KP ALUL', '200', 'MIZUHARA', 'INDONESIA', '20', '200', 'JAPAN', '299', '200', '233', '233', '2025-08-28 02:30:05', '2025-08-28 02:30:05');
+(12, '29918', 'KP ALUL', '200', 'MIZUHARA', 'INDONESIA', '20', '200', 'JAPAN', '299', '200', '233', '233', '2025-08-28 02:30:05', '2025-08-28 02:30:05'),
+(13, '9289', 'KP IBOT KAJI', '2999', 'SHIFU', 'Japan', '299', '1999', 'JAPAN', '2399', '3999', '2999', '2999', '2025-08-28 05:36:43', '2025-08-28 05:36:43');
 
 -- --------------------------------------------------------
 
@@ -399,7 +428,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `agents`
 --
 ALTER TABLE `agents`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -411,7 +440,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `header_transaksi`
 --
 ALTER TABLE `header_transaksi`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `invoice`
@@ -423,13 +452,13 @@ ALTER TABLE `invoice`
 -- AUTO_INCREMENT for table `kategori_transaksi`
 --
 ALTER TABLE `kategori_transaksi`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `ppkb`
 --
 ALTER TABLE `ppkb`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `pranota`
@@ -447,7 +476,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `ship`
 --
 ALTER TABLE `ship`
-  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -422,6 +422,57 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            <table class="footer-table">
+                                <thead>
+                                    <tr>
+                                        <th>Lampiran Dokumen Kapal:</th>
+                                        <th>File :</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1. NIB <br />
+                                            2. PMKU <br />
+                                            3. SKT Pajak <br />
+                                            4. SPPKP <br />
+                                            5. SKTD
+                                        </td>
+                                        <td>
+                                            <?php if (!empty($agent['NIB'])): ?>
+                                                <a class="text-danger" href="<?= base_url('uploads/' . rawurlencode($agent['NIB'])); ?>" target="_blank">
+
+                                                    Buka
+                                                </a>
+                                            <?php endif; ?><br />
+                                            <?php if (!empty($agent['PMKU'])): ?>
+                                                <a class="text-danger" href="<?= base_url('uploads/' . rawurlencode($agent['PMKU'])); ?>" target="_blank">
+
+                                                    Buka
+                                                </a>
+                                            <?php endif; ?><br />
+                                            <?php if (!empty($agent['SKT'])): ?>
+                                                <a class="text-danger" href="<?= base_url('uploads/' . rawurlencode($agent['SKT'])); ?>" target="_blank">
+
+                                                    Buka
+                                                </a>
+                                            <?php endif; ?><br />
+                                            <?php if (!empty($agent['SPPKP'])): ?>
+                                                <a class="text-danger" href="<?= base_url('uploads/' . rawurlencode($agent['SPPKP'])); ?>" target="_blank">
+
+                                                    Buka
+                                                </a>
+                                            <?php endif; ?><br />
+                                            <?php if (!empty($agent['SKTD'])): ?>
+                                                <a class="text-danger" href="<?= base_url('uploads/' . rawurlencode($agent['SKTD'])); ?>" target="_blank">
+
+                                                    Buka
+                                                </a>
+                                            <?php endif; ?><br />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="d-flex gap-2 m-3 button-comb">
                             <?php if (!empty($ppkb['ship_file'])): ?>
